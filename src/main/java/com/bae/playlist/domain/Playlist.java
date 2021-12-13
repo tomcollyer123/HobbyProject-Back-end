@@ -17,7 +17,7 @@ public class Playlist {
 	@Column(nullable = false)
 	private String artistName;
 	@Column(nullable = false)
-	private String songName;
+	private String title;
 	@Column(nullable = false)
 	private String albumName;
 	@Column(nullable = false)
@@ -26,21 +26,21 @@ public class Playlist {
 	private Date releaseDate;
 
 	// Constructor with an ID
-	public Playlist(Integer id, String artistName, String songName, String albumName, String genre, Date releaseDate) {
+	public Playlist(Integer id, String artistName, String title, String albumName, String genre, Date releaseDate) {
 		super();
 		this.id = id;
 		this.artistName = artistName;
-		this.songName = songName;
+		this.title = title;
 		this.albumName = albumName;
 		this.genre = genre;
 		this.releaseDate = releaseDate;
 	}
 
 	// Constructor without an ID
-	public Playlist(String artistName, String songName, String albumName, String genre, Date releaseDate) {
+	public Playlist(String artistName, String title, String albumName, String genre, Date releaseDate) {
 		super();
 		this.artistName = artistName;
-		this.songName = songName;
+		this.title = title;
 		this.albumName = albumName;
 		this.genre = genre;
 		this.releaseDate = releaseDate;
@@ -68,12 +68,12 @@ public class Playlist {
 		this.artistName = artistName;
 	}
 
-	public String getSongName() {
-		return songName;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setSongName(String songName) {
-		this.songName = songName;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getAlbumName() {
@@ -103,8 +103,8 @@ public class Playlist {
 	// toString method
 	@Override
 	public String toString() {
-		return "Playlist [id=" + id + ", artistName=" + artistName + ", songName=" + songName + ", albumName="
-				+ albumName + ", genre=" + genre + ", releaseDate=" + releaseDate + "]";
+		return "Playlist [id=" + id + ", artistName=" + artistName + ", title=" + title + ", albumName=" + albumName
+				+ ", genre=" + genre + ", releaseDate=" + releaseDate + "]";
 	}
 
 }
