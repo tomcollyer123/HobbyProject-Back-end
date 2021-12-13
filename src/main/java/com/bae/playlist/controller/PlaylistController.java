@@ -59,4 +59,33 @@ public class PlaylistController {
 
 		return new ResponseEntity<Playlist>(HttpStatus.NO_CONTENT); // 204
 	}
+
+	@GetMapping("/getByArtist/{artist}")
+	public ResponseEntity<List<Playlist>> getAllSongsByArtist(@PathVariable String artist) {
+		List<Playlist> found = this.service.getAllSongsByArtistName(artist);
+		return ResponseEntity.ok(found);
+	}
+
+	@GetMapping("/getByTitle/{title}")
+	public ResponseEntity<List<Playlist>> getAllSongByTitle(@PathVariable String title) {
+		List<Playlist> found = this.service.getAllSongsByTitle(title);
+		return ResponseEntity.ok(found);
+	}
+
+	@GetMapping("/getByalbumName/{albumName}")
+	public ResponseEntity<List<Playlist>> getAllSongsByAlbumName(@PathVariable String albumName) {
+		List<Playlist> found = this.service.getAllSongsByAlbumName(albumName);
+		return ResponseEntity.ok(found);
+	}
+
+	@GetMapping("/getByGenre/{genre}")
+	public ResponseEntity<List<Playlist>> getAllSongsByGenre(@PathVariable String genre) {
+		List<Playlist> found = this.service.getAllSongsByGenre(genre);
+		return ResponseEntity.ok(found);
+	}
+
+	@GetMapping("getById/{id}") // 200 - don't need to change these as the default is 200 anyway
+	public Playlist getSong(@PathVariable Integer id) {
+		return this.service.getSong(id);
+	}
 }

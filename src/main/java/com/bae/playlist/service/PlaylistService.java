@@ -18,7 +18,7 @@ public interface PlaylistService {
 
 	List<Playlist> getAllSongsByAlbumName(String albumName);
 
-	List<Playlist> getAllSongsByGenre(Integer genre);
+	List<Playlist> getAllSongsByGenre(String genre);
 
 	Playlist getSong(Integer id);
 
