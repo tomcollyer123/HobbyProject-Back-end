@@ -1,6 +1,6 @@
 INSERT INTO `playlist` (
 			`artist_name`,
-			`song_name`,
+			`title`,
 			`album_name`,
 			`genre`,
 			`release_date`
