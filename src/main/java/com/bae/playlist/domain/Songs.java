@@ -1,6 +1,6 @@
 package com.bae.playlist.domain;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,35 +9,35 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity // flags class as a table to spring data
-public class Playlist {
+public class Songs {
 
 	@Id // primary key
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // sets auto increment for ID
 	private Integer id;
-	@Column(nullable = false)
+	@Column
 	private String artistName;
-	@Column(nullable = false)
+	@Column
 	private String title;
-	@Column(nullable = false)
+	@Column
 	private String albumName;
-	@Column(nullable = false)
+	@Column
 	private String genre;
-	@Column(nullable = false)
-	private Date releaseDate;
+	@Column
+	private LocalDate releaseDate;
 
 	// Constructor with an ID
-	public Playlist(Integer id, String artistName, String title, String albumName, String genre, Date releaseDate) {
+	public Songs(Integer id, String artistName, String title, String albumName, String genre, LocalDate date) {
 		super();
 		this.id = id;
 		this.artistName = artistName;
 		this.title = title;
 		this.albumName = albumName;
 		this.genre = genre;
-		this.releaseDate = releaseDate;
+		this.releaseDate = date;
 	}
 
 	// Constructor without an ID
-	public Playlist(String artistName, String title, String albumName, String genre, Date releaseDate) {
+	public Songs(String artistName, String title, String albumName, String genre, LocalDate releaseDate) {
 		super();
 		this.artistName = artistName;
 		this.title = title;
@@ -47,7 +47,7 @@ public class Playlist {
 	}
 
 	// Default constructor
-	public Playlist() {
+	public Songs() {
 		super();
 	}
 
@@ -92,11 +92,11 @@ public class Playlist {
 		this.genre = genre;
 	}
 
-	public Date getReleaseDate() {
+	public LocalDate getReleaseDate() {
 		return releaseDate;
 	}
 
-	public void setReleaseDate(Date releaseDate) {
+	public void setReleaseDate(LocalDate releaseDate) {
 		this.releaseDate = releaseDate;
 	}
 
