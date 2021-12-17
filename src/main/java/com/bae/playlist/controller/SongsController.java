@@ -65,21 +65,15 @@ public class SongsController {
 		return new ResponseEntity<Songs>(HttpStatus.NO_CONTENT); // 204
 	}
 
-	@GetMapping("/getByArtist/{artist}")
-	public ResponseEntity<List<Songs>> getAllSongsByArtist(@PathVariable String artist) {
-		List<Songs> found = this.service.getAllSongsByArtistNameIgnoreCase(artist);
-		return ResponseEntity.ok(found);
-	}
-
 	@GetMapping("/getByTitle/{title}")
 	public ResponseEntity<List<Songs>> getAllSongByTitle(@PathVariable String title) {
 		List<Songs> found = this.service.getAllSongsByTitleIgnoreCase(title);
 		return ResponseEntity.ok(found);
 	}
 
-	@GetMapping("/getByAlbum/{album}")
-	public ResponseEntity<List<Songs>> getAllSongsByAlbumName(@PathVariable String album) {
-		List<Songs> found = this.service.getAllSongsByAlbumNameIgnoreCase(album);
+	@GetMapping("/getByAlbum/{albumName}")
+	public ResponseEntity<List<Songs>> getAllSongsByAlbumName(@PathVariable String albumName) {
+		List<Songs> found = this.service.getAllSongsByAlbumNameIgnoreCase(albumName);
 		return ResponseEntity.ok(found);
 	}
 

@@ -1,6 +1,6 @@
 package com.bae.playlist.service;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import com.bae.playlist.domain.Songs;
@@ -44,7 +44,7 @@ public class SongsServiceList implements SongsService {
 	}
 
 	@Override
-	public List<Songs> getAllSongsByReleaseDate(Date releaseDate) {
+	public List<Songs> getAllSongsByReleaseDate(LocalDate releaseDate) {
 		// TODO Auto-generated method stub
 		return null;
 	}
